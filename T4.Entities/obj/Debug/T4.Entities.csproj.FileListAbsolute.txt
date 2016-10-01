@@ -1,0 +1,7 @@
+D:\rahman\T4Test\T4.Entities\bin\Debug\T4.Core.dll
+D:\rahman\T4Test\T4.Entities\bin\Debug\T4.Core.pdb
+D:\rahman\T4Test\T4.Entities\obj\Debug\T4.Entities.csprojResolveAssemblyReference.cache
+D:\rahman\T4Test\T4.Entities\obj\Debug\T4.Entities.dll
+D:\rahman\T4Test\T4.Entities\obj\Debug\T4.Entities.pdb
+D:\rahman\T4Test\T4.Entities\bin\Debug\T4.Entities.dll
+D:\rahman\T4Test\T4.Entities\bin\Debug\T4.Entities.pdb

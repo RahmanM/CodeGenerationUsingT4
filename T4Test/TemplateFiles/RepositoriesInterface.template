@@ -1,0 +1,9 @@
+﻿[Imports_PlaceHolder]
+
+namespace [Namespace_PlaceHolder]
+{
+	public interface I[Entity_Name_PlaceHolder]Repository : IGenericRepository<[Entity_Name_PlaceHolder]>
+    {
+
+    }
+}

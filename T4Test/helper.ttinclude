@@ -1,0 +1,157 @@
+﻿<#@ template debug="true" hostSpecific="true" #>
+<#@ output extension=".txt" #>
+<#@ Assembly Name="System.Core" #>
+<#@ Assembly Name="System.Windows.Forms" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Reflection" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Diagnostics" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Linq.Expressions" #>
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.Collections.Generic" #> 
+<#@ include file="configuration.ttinclude" #>
+
+
+<#+
+
+public class ProxyDomain : MarshalByRefObject
+{
+    public Assembly GetAssembly(string assemblyPath)
+    {
+        try
+        {
+
+			// Instead of loading the dll read the bytes and then load data??? to prevent locking???
+            //return Assembly.LoadFrom(assemblyPath);
+			
+			byte[] data;
+			using (var fs = File.OpenRead(assemblyPath))
+			{
+				data = new byte[fs.Length];
+				fs.Read(data, 0, Convert.ToInt32(fs.Length));
+			}
+
+			if (data == null || data.Length == 0)
+			{
+				throw new ApplicationException("Failed to load " + assemblyPath);
+			}
+
+			var asm = Assembly.Load(data);
+			return asm;
+
+        }
+		catch (ReflectionTypeLoadException ex)
+        {
+			GenerationUtil.HandleException(ex);
+        }
+        catch (Exception ex)
+        {
+			throw new InvalidOperationException(ex.Message);
+        }
+
+		return null;
+    }
+
+}
+
+public static partial class AssemblyHelper 
+{
+	public static Type[] GetDomainTypes()
+	{
+		Type[] entityTypes=null;
+		var entityNamespaces = Configurations.DomainModelProjectNamespace.Split(new char[]{','}, StringSplitOptions.RemoveEmptyEntries).ToList();
+
+		try 
+		{
+			var proxyDomain = new ProxyDomain();
+			var path = Configurations.DomainModelProjectDll;
+			var assembly = proxyDomain.GetAssembly(path);
+
+			var func = Configurations.DomainTypeFilter;
+
+		    var queryable = assembly.GetTypes()
+				.Where(t => string.IsNullOrEmpty(Configurations.DomainModelProjectNamespace) || entityNamespaces.Any(n => t.Namespace.StartsWith(n)))
+				.Where(t => func(t));
+
+		    if (!string.IsNullOrEmpty(Configurations.BaseEntityClass))
+			{
+				var baseEntityAssembly = proxyDomain.GetAssembly(Configurations.BaseEntityClassDll);
+				var baseType = baseEntityAssembly.GetTypes().First(t => t.Name == Configurations.BaseEntityClass);
+				// TODO: Fix as this line returns nothing somehow!!!
+				//queryable  = queryable.Where(t=> baseType.IsAssignableFrom(t));
+			}
+
+			entityTypes = queryable.ToArray();
+			
+        }
+		catch (ReflectionTypeLoadException ex)
+        {
+			GenerationUtil.HandleException(ex);
+        }
+        catch (Exception ex)
+        {
+			throw new InvalidOperationException(ex.Message);
+        }
+
+		return entityTypes;
+    }
+
+}
+
+public static class GenerationUtil
+{
+	public static string ReadFileAndReturnContent(string filePath)
+    {
+        string fileContent = File.ReadAllText(filePath);
+        return fileContent;
+    }
+
+    public static string GetEntityNameParameter(string entityName)
+    {
+        var lowerCaseEntityname = Char.ToLowerInvariant(entityName[0]) + entityName.Substring(1);
+        return lowerCaseEntityname;
+    }
+
+	public static void HandleException(ReflectionTypeLoadException ex)
+    {
+		StringBuilder sb = new StringBuilder();
+        foreach (Exception exSub in ex.LoaderExceptions)
+        {
+            sb.AppendLine(exSub.Message);
+            FileNotFoundException exFileNotFound = exSub as FileNotFoundException;
+            if (exFileNotFound != null)
+            {
+                if (!string.IsNullOrEmpty(exFileNotFound.FusionLog))
+                {
+                    sb.AppendLine("Fusion Log:");
+                    sb.AppendLine(exFileNotFound.FusionLog);
+                }
+            }
+            sb.AppendLine();
+        }
+        string errorMessage = sb.ToString();
+        throw new InvalidOperationException(errorMessage);
+    }
+
+	public static void WriteToFile(string filePath, string fileName, string contect)
+    {
+        filePath = !filePath.EndsWith(@"\") ? filePath + @"\" : filePath;
+        var fullFileName = filePath + fileName + ".cs";
+        File.WriteAllText(fullFileName, contect);
+    }
+
+	public static string UpdatePlaceholders(string contentToUpdate, 
+										  string entityName,
+										  string namespaces,
+										  string imports, 
+										  string entityNameParameter)
+    {
+		contentToUpdate = contentToUpdate.Replace("[Imports_PlaceHolder]", imports);
+		contentToUpdate = contentToUpdate.Replace("[Namespace_PlaceHolder]", namespaces);
+        contentToUpdate = contentToUpdate.Replace("[Entity_Name_PlaceHolder]", entityName);
+        contentToUpdate = contentToUpdate.Replace("[Entity_Name_PlaceHolder_Parameter]", entityNameParameter);
+		return contentToUpdate;
+    }
+}
+#>

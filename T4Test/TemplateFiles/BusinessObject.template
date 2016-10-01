@@ -1,0 +1,64 @@
+﻿[Imports_PlaceHolder]
+
+namespace [Namespace_PlaceHolder]
+{
+
+    public class [Entity_Name_PlaceHolder]BusinessObject : I[Entity_Name_PlaceHolder]BusinessObject
+    {
+        #region Dependencies
+
+        public I[Entity_Name_PlaceHolder]Repository [Entity_Name_PlaceHolder]Repository { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        public [Entity_Name_PlaceHolder]BusinessObject(I[Entity_Name_PlaceHolder]Repository [Entity_Name_PlaceHolder_Parameter]Repository)
+        {
+            [Entity_Name_PlaceHolder]Repository = [Entity_Name_PlaceHolder_Parameter]Repository;
+        }
+
+        #endregion
+
+        #region Public Functions
+
+        public [Entity_Name_PlaceHolder] Get(int id)
+        {
+            var result = [Entity_Name_PlaceHolder]Repository.FindBy(i => i.Id == id);
+            return result.FirstOrDefault();
+        }
+
+		public IQueryable<[Entity_Name_PlaceHolder]> GetAll()
+		{
+		
+            var result = [Entity_Name_PlaceHolder]Repository.GetAll();
+            return result;
+		}
+
+        public [Entity_Name_PlaceHolder] Save([Entity_Name_PlaceHolder] [Entity_Name_PlaceHolder_Parameter])
+        {
+			var updatedEntity = [Entity_Name_PlaceHolder]Repository.AddOrUpdate([Entity_Name_PlaceHolder_Parameter]);
+            return updatedEntity;
+        }
+
+		public void Delete([Entity_Name_PlaceHolder] [Entity_Name_PlaceHolder_Parameter])
+		{
+			var result = [Entity_Name_PlaceHolder]Repository.FindBy(i => i.Id == [Entity_Name_PlaceHolder_Parameter].Id);
+            var entityToDelete = result.FirstOrDefault();
+
+            if (entityToDelete != null)
+            {
+                [Entity_Name_PlaceHolder]Repository.Delete(entityToDelete);
+            }
+		}
+
+		public [Entity_Name_PlaceHolder] FindBy(Expression<Func<[Entity_Name_PlaceHolder], bool>> predicate)
+        {
+            var result = [Entity_Name_PlaceHolder]Repository.FindBy(predicate);
+            return result.FirstOrDefault();
+        }
+
+        #endregion
+
+    }
+}

@@ -1,0 +1,10 @@
+﻿[Imports_PlaceHolder]
+
+namespace [Namespace_PlaceHolder]
+{
+    public class [Entity_Name_PlaceHolder]Repository : GenericRepository<[Entity_Name_PlaceHolder]>, I[Entity_Name_PlaceHolder]Repository
+    {
+        public [Entity_Name_PlaceHolder]Repository(DbContext context) : base(context) {}
+    }
+}
+

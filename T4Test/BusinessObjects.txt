@@ -1,0 +1,1693 @@
+﻿ 
+ 
+
+////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+
+    public class AccountBusinessObject : IAccountBusinessObject
+    {
+        #region Dependencies
+
+        public IAccountRepository AccountRepository { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        public AccountBusinessObject(IAccountRepository accountRepository)
+        {
+            AccountRepository = accountRepository;
+        }
+
+        #endregion
+
+        #region Public Functions
+
+        public Account Get(int id)
+        {
+            var result = AccountRepository.FindBy(i => i.Id == id);
+            return result.FirstOrDefault();
+        }
+
+		public IQueryable<Account> GetAll()
+		{
+		
+            var result = AccountRepository.GetAll();
+            return result;
+		}
+
+        public Account Save(Account account)
+        {
+			var updatedEntity = AccountRepository.AddOrUpdate(account);
+            return updatedEntity;
+        }
+
+		public void Delete(Account account)
+		{
+			var result = AccountRepository.FindBy(i => i.Id == account.Id);
+            var entityToDelete = result.FirstOrDefault();
+
+            if (entityToDelete != null)
+            {
+                AccountRepository.Delete(entityToDelete);
+            }
+		}
+
+		public Account FindBy(Expression<Func<Account, bool>> predicate)
+        {
+            var result = AccountRepository.FindBy(predicate);
+            return result.FirstOrDefault();
+        }
+
+        #endregion
+
+    }
+}
+
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+
+    public class BallBusinessObject : IBallBusinessObject
+    {
+        #region Dependencies
+
+        public IBallRepository BallRepository { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        public BallBusinessObject(IBallRepository ballRepository)
+        {
+            BallRepository = ballRepository;
+        }
+
+        #endregion
+
+        #region Public Functions
+
+        public Ball Get(int id)
+        {
+            var result = BallRepository.FindBy(i => i.Id == id);
+            return result.FirstOrDefault();
+        }
+
+		public IQueryable<Ball> GetAll()
+		{
+		
+            var result = BallRepository.GetAll();
+            return result;
+		}
+
+        public Ball Save(Ball ball)
+        {
+			var updatedEntity = BallRepository.AddOrUpdate(ball);
+            return updatedEntity;
+        }
+
+		public void Delete(Ball ball)
+		{
+			var result = BallRepository.FindBy(i => i.Id == ball.Id);
+            var entityToDelete = result.FirstOrDefault();
+
+            if (entityToDelete != null)
+            {
+                BallRepository.Delete(entityToDelete);
+            }
+		}
+
+		public Ball FindBy(Expression<Func<Ball, bool>> predicate)
+        {
+            var result = BallRepository.FindBy(predicate);
+            return result.FirstOrDefault();
+        }
+
+        #endregion
+
+    }
+}
+
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+
+    public class ActivityBusinessObject : IActivityBusinessObject
+    {
+        #region Dependencies
+
+        public IActivityRepository ActivityRepository { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        public ActivityBusinessObject(IActivityRepository activityRepository)
+        {
+            ActivityRepository = activityRepository;
+        }
+
+        #endregion
+
+        #region Public Functions
+
+        public Activity Get(int id)
+        {
+            var result = ActivityRepository.FindBy(i => i.Id == id);
+            return result.FirstOrDefault();
+        }
+
+		public IQueryable<Activity> GetAll()
+		{
+		
+            var result = ActivityRepository.GetAll();
+            return result;
+		}
+
+        public Activity Save(Activity activity)
+        {
+			var updatedEntity = ActivityRepository.AddOrUpdate(activity);
+            return updatedEntity;
+        }
+
+		public void Delete(Activity activity)
+		{
+			var result = ActivityRepository.FindBy(i => i.Id == activity.Id);
+            var entityToDelete = result.FirstOrDefault();
+
+            if (entityToDelete != null)
+            {
+                ActivityRepository.Delete(entityToDelete);
+            }
+		}
+
+		public Activity FindBy(Expression<Func<Activity, bool>> predicate)
+        {
+            var result = ActivityRepository.FindBy(predicate);
+            return result.FirstOrDefault();
+        }
+
+        #endregion
+
+    }
+}
+
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+
+    public class ActivityTypeBusinessObject : IActivityTypeBusinessObject
+    {
+        #region Dependencies
+
+        public IActivityTypeRepository ActivityTypeRepository { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        public ActivityTypeBusinessObject(IActivityTypeRepository activityTypeRepository)
+        {
+            ActivityTypeRepository = activityTypeRepository;
+        }
+
+        #endregion
+
+        #region Public Functions
+
+        public ActivityType Get(int id)
+        {
+            var result = ActivityTypeRepository.FindBy(i => i.Id == id);
+            return result.FirstOrDefault();
+        }
+
+		public IQueryable<ActivityType> GetAll()
+		{
+		
+            var result = ActivityTypeRepository.GetAll();
+            return result;
+		}
+
+        public ActivityType Save(ActivityType activityType)
+        {
+			var updatedEntity = ActivityTypeRepository.AddOrUpdate(activityType);
+            return updatedEntity;
+        }
+
+		public void Delete(ActivityType activityType)
+		{
+			var result = ActivityTypeRepository.FindBy(i => i.Id == activityType.Id);
+            var entityToDelete = result.FirstOrDefault();
+
+            if (entityToDelete != null)
+            {
+                ActivityTypeRepository.Delete(entityToDelete);
+            }
+		}
+
+		public ActivityType FindBy(Expression<Func<ActivityType, bool>> predicate)
+        {
+            var result = ActivityTypeRepository.FindBy(predicate);
+            return result.FirstOrDefault();
+        }
+
+        #endregion
+
+    }
+}
+
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+
+    public class AddressBusinessObject : IAddressBusinessObject
+    {
+        #region Dependencies
+
+        public IAddressRepository AddressRepository { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        public AddressBusinessObject(IAddressRepository addressRepository)
+        {
+            AddressRepository = addressRepository;
+        }
+
+        #endregion
+
+        #region Public Functions
+
+        public Address Get(int id)
+        {
+            var result = AddressRepository.FindBy(i => i.Id == id);
+            return result.FirstOrDefault();
+        }
+
+		public IQueryable<Address> GetAll()
+		{
+		
+            var result = AddressRepository.GetAll();
+            return result;
+		}
+
+        public Address Save(Address address)
+        {
+			var updatedEntity = AddressRepository.AddOrUpdate(address);
+            return updatedEntity;
+        }
+
+		public void Delete(Address address)
+		{
+			var result = AddressRepository.FindBy(i => i.Id == address.Id);
+            var entityToDelete = result.FirstOrDefault();
+
+            if (entityToDelete != null)
+            {
+                AddressRepository.Delete(entityToDelete);
+            }
+		}
+
+		public Address FindBy(Expression<Func<Address, bool>> predicate)
+        {
+            var result = AddressRepository.FindBy(predicate);
+            return result.FirstOrDefault();
+        }
+
+        #endregion
+
+    }
+}
+
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+
+    public class AddressTypeBusinessObject : IAddressTypeBusinessObject
+    {
+        #region Dependencies
+
+        public IAddressTypeRepository AddressTypeRepository { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        public AddressTypeBusinessObject(IAddressTypeRepository addressTypeRepository)
+        {
+            AddressTypeRepository = addressTypeRepository;
+        }
+
+        #endregion
+
+        #region Public Functions
+
+        public AddressType Get(int id)
+        {
+            var result = AddressTypeRepository.FindBy(i => i.Id == id);
+            return result.FirstOrDefault();
+        }
+
+		public IQueryable<AddressType> GetAll()
+		{
+		
+            var result = AddressTypeRepository.GetAll();
+            return result;
+		}
+
+        public AddressType Save(AddressType addressType)
+        {
+			var updatedEntity = AddressTypeRepository.AddOrUpdate(addressType);
+            return updatedEntity;
+        }
+
+		public void Delete(AddressType addressType)
+		{
+			var result = AddressTypeRepository.FindBy(i => i.Id == addressType.Id);
+            var entityToDelete = result.FirstOrDefault();
+
+            if (entityToDelete != null)
+            {
+                AddressTypeRepository.Delete(entityToDelete);
+            }
+		}
+
+		public AddressType FindBy(Expression<Func<AddressType, bool>> predicate)
+        {
+            var result = AddressTypeRepository.FindBy(predicate);
+            return result.FirstOrDefault();
+        }
+
+        #endregion
+
+    }
+}
+
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+
+    public class CampaignBusinessObject : ICampaignBusinessObject
+    {
+        #region Dependencies
+
+        public ICampaignRepository CampaignRepository { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        public CampaignBusinessObject(ICampaignRepository campaignRepository)
+        {
+            CampaignRepository = campaignRepository;
+        }
+
+        #endregion
+
+        #region Public Functions
+
+        public Campaign Get(int id)
+        {
+            var result = CampaignRepository.FindBy(i => i.Id == id);
+            return result.FirstOrDefault();
+        }
+
+		public IQueryable<Campaign> GetAll()
+		{
+		
+            var result = CampaignRepository.GetAll();
+            return result;
+		}
+
+        public Campaign Save(Campaign campaign)
+        {
+			var updatedEntity = CampaignRepository.AddOrUpdate(campaign);
+            return updatedEntity;
+        }
+
+		public void Delete(Campaign campaign)
+		{
+			var result = CampaignRepository.FindBy(i => i.Id == campaign.Id);
+            var entityToDelete = result.FirstOrDefault();
+
+            if (entityToDelete != null)
+            {
+                CampaignRepository.Delete(entityToDelete);
+            }
+		}
+
+		public Campaign FindBy(Expression<Func<Campaign, bool>> predicate)
+        {
+            var result = CampaignRepository.FindBy(predicate);
+            return result.FirstOrDefault();
+        }
+
+        #endregion
+
+    }
+}
+
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+
+    public class CaseBusinessObject : ICaseBusinessObject
+    {
+        #region Dependencies
+
+        public ICaseRepository CaseRepository { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        public CaseBusinessObject(ICaseRepository caseRepository)
+        {
+            CaseRepository = caseRepository;
+        }
+
+        #endregion
+
+        #region Public Functions
+
+        public Case Get(int id)
+        {
+            var result = CaseRepository.FindBy(i => i.Id == id);
+            return result.FirstOrDefault();
+        }
+
+		public IQueryable<Case> GetAll()
+		{
+		
+            var result = CaseRepository.GetAll();
+            return result;
+		}
+
+        public Case Save(Case case)
+        {
+			var updatedEntity = CaseRepository.AddOrUpdate(case);
+            return updatedEntity;
+        }
+
+		public void Delete(Case case)
+		{
+			var result = CaseRepository.FindBy(i => i.Id == case.Id);
+            var entityToDelete = result.FirstOrDefault();
+
+            if (entityToDelete != null)
+            {
+                CaseRepository.Delete(entityToDelete);
+            }
+		}
+
+		public Case FindBy(Expression<Func<Case, bool>> predicate)
+        {
+            var result = CaseRepository.FindBy(predicate);
+            return result.FirstOrDefault();
+        }
+
+        #endregion
+
+    }
+}
+
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+
+    public class ContactBusinessObject : IContactBusinessObject
+    {
+        #region Dependencies
+
+        public IContactRepository ContactRepository { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        public ContactBusinessObject(IContactRepository contactRepository)
+        {
+            ContactRepository = contactRepository;
+        }
+
+        #endregion
+
+        #region Public Functions
+
+        public Contact Get(int id)
+        {
+            var result = ContactRepository.FindBy(i => i.Id == id);
+            return result.FirstOrDefault();
+        }
+
+		public IQueryable<Contact> GetAll()
+		{
+		
+            var result = ContactRepository.GetAll();
+            return result;
+		}
+
+        public Contact Save(Contact contact)
+        {
+			var updatedEntity = ContactRepository.AddOrUpdate(contact);
+            return updatedEntity;
+        }
+
+		public void Delete(Contact contact)
+		{
+			var result = ContactRepository.FindBy(i => i.Id == contact.Id);
+            var entityToDelete = result.FirstOrDefault();
+
+            if (entityToDelete != null)
+            {
+                ContactRepository.Delete(entityToDelete);
+            }
+		}
+
+		public Contact FindBy(Expression<Func<Contact, bool>> predicate)
+        {
+            var result = ContactRepository.FindBy(predicate);
+            return result.FirstOrDefault();
+        }
+
+        #endregion
+
+    }
+}
+
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+
+    public class CountryBusinessObject : ICountryBusinessObject
+    {
+        #region Dependencies
+
+        public ICountryRepository CountryRepository { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        public CountryBusinessObject(ICountryRepository countryRepository)
+        {
+            CountryRepository = countryRepository;
+        }
+
+        #endregion
+
+        #region Public Functions
+
+        public Country Get(int id)
+        {
+            var result = CountryRepository.FindBy(i => i.Id == id);
+            return result.FirstOrDefault();
+        }
+
+		public IQueryable<Country> GetAll()
+		{
+		
+            var result = CountryRepository.GetAll();
+            return result;
+		}
+
+        public Country Save(Country country)
+        {
+			var updatedEntity = CountryRepository.AddOrUpdate(country);
+            return updatedEntity;
+        }
+
+		public void Delete(Country country)
+		{
+			var result = CountryRepository.FindBy(i => i.Id == country.Id);
+            var entityToDelete = result.FirstOrDefault();
+
+            if (entityToDelete != null)
+            {
+                CountryRepository.Delete(entityToDelete);
+            }
+		}
+
+		public Country FindBy(Expression<Func<Country, bool>> predicate)
+        {
+            var result = CountryRepository.FindBy(predicate);
+            return result.FirstOrDefault();
+        }
+
+        #endregion
+
+    }
+}
+
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+
+    public class EmailBusinessObject : IEmailBusinessObject
+    {
+        #region Dependencies
+
+        public IEmailRepository EmailRepository { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        public EmailBusinessObject(IEmailRepository emailRepository)
+        {
+            EmailRepository = emailRepository;
+        }
+
+        #endregion
+
+        #region Public Functions
+
+        public Email Get(int id)
+        {
+            var result = EmailRepository.FindBy(i => i.Id == id);
+            return result.FirstOrDefault();
+        }
+
+		public IQueryable<Email> GetAll()
+		{
+		
+            var result = EmailRepository.GetAll();
+            return result;
+		}
+
+        public Email Save(Email email)
+        {
+			var updatedEntity = EmailRepository.AddOrUpdate(email);
+            return updatedEntity;
+        }
+
+		public void Delete(Email email)
+		{
+			var result = EmailRepository.FindBy(i => i.Id == email.Id);
+            var entityToDelete = result.FirstOrDefault();
+
+            if (entityToDelete != null)
+            {
+                EmailRepository.Delete(entityToDelete);
+            }
+		}
+
+		public Email FindBy(Expression<Func<Email, bool>> predicate)
+        {
+            var result = EmailRepository.FindBy(predicate);
+            return result.FirstOrDefault();
+        }
+
+        #endregion
+
+    }
+}
+
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+
+    public class EngagementBusinessObject : IEngagementBusinessObject
+    {
+        #region Dependencies
+
+        public IEngagementRepository EngagementRepository { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        public EngagementBusinessObject(IEngagementRepository engagementRepository)
+        {
+            EngagementRepository = engagementRepository;
+        }
+
+        #endregion
+
+        #region Public Functions
+
+        public Engagement Get(int id)
+        {
+            var result = EngagementRepository.FindBy(i => i.Id == id);
+            return result.FirstOrDefault();
+        }
+
+		public IQueryable<Engagement> GetAll()
+		{
+		
+            var result = EngagementRepository.GetAll();
+            return result;
+		}
+
+        public Engagement Save(Engagement engagement)
+        {
+			var updatedEntity = EngagementRepository.AddOrUpdate(engagement);
+            return updatedEntity;
+        }
+
+		public void Delete(Engagement engagement)
+		{
+			var result = EngagementRepository.FindBy(i => i.Id == engagement.Id);
+            var entityToDelete = result.FirstOrDefault();
+
+            if (entityToDelete != null)
+            {
+                EngagementRepository.Delete(entityToDelete);
+            }
+		}
+
+		public Engagement FindBy(Expression<Func<Engagement, bool>> predicate)
+        {
+            var result = EngagementRepository.FindBy(predicate);
+            return result.FirstOrDefault();
+        }
+
+        #endregion
+
+    }
+}
+
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+
+    public class EngagementTypeBusinessObject : IEngagementTypeBusinessObject
+    {
+        #region Dependencies
+
+        public IEngagementTypeRepository EngagementTypeRepository { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        public EngagementTypeBusinessObject(IEngagementTypeRepository engagementTypeRepository)
+        {
+            EngagementTypeRepository = engagementTypeRepository;
+        }
+
+        #endregion
+
+        #region Public Functions
+
+        public EngagementType Get(int id)
+        {
+            var result = EngagementTypeRepository.FindBy(i => i.Id == id);
+            return result.FirstOrDefault();
+        }
+
+		public IQueryable<EngagementType> GetAll()
+		{
+		
+            var result = EngagementTypeRepository.GetAll();
+            return result;
+		}
+
+        public EngagementType Save(EngagementType engagementType)
+        {
+			var updatedEntity = EngagementTypeRepository.AddOrUpdate(engagementType);
+            return updatedEntity;
+        }
+
+		public void Delete(EngagementType engagementType)
+		{
+			var result = EngagementTypeRepository.FindBy(i => i.Id == engagementType.Id);
+            var entityToDelete = result.FirstOrDefault();
+
+            if (entityToDelete != null)
+            {
+                EngagementTypeRepository.Delete(entityToDelete);
+            }
+		}
+
+		public EngagementType FindBy(Expression<Func<EngagementType, bool>> predicate)
+        {
+            var result = EngagementTypeRepository.FindBy(predicate);
+            return result.FirstOrDefault();
+        }
+
+        #endregion
+
+    }
+}
+
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+
+    public class EnquiryBusinessObject : IEnquiryBusinessObject
+    {
+        #region Dependencies
+
+        public IEnquiryRepository EnquiryRepository { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        public EnquiryBusinessObject(IEnquiryRepository enquiryRepository)
+        {
+            EnquiryRepository = enquiryRepository;
+        }
+
+        #endregion
+
+        #region Public Functions
+
+        public Enquiry Get(int id)
+        {
+            var result = EnquiryRepository.FindBy(i => i.Id == id);
+            return result.FirstOrDefault();
+        }
+
+		public IQueryable<Enquiry> GetAll()
+		{
+		
+            var result = EnquiryRepository.GetAll();
+            return result;
+		}
+
+        public Enquiry Save(Enquiry enquiry)
+        {
+			var updatedEntity = EnquiryRepository.AddOrUpdate(enquiry);
+            return updatedEntity;
+        }
+
+		public void Delete(Enquiry enquiry)
+		{
+			var result = EnquiryRepository.FindBy(i => i.Id == enquiry.Id);
+            var entityToDelete = result.FirstOrDefault();
+
+            if (entityToDelete != null)
+            {
+                EnquiryRepository.Delete(entityToDelete);
+            }
+		}
+
+		public Enquiry FindBy(Expression<Func<Enquiry, bool>> predicate)
+        {
+            var result = EnquiryRepository.FindBy(predicate);
+            return result.FirstOrDefault();
+        }
+
+        #endregion
+
+    }
+}
+
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+
+    public class IncidentBusinessObject : IIncidentBusinessObject
+    {
+        #region Dependencies
+
+        public IIncidentRepository IncidentRepository { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        public IncidentBusinessObject(IIncidentRepository incidentRepository)
+        {
+            IncidentRepository = incidentRepository;
+        }
+
+        #endregion
+
+        #region Public Functions
+
+        public Incident Get(int id)
+        {
+            var result = IncidentRepository.FindBy(i => i.Id == id);
+            return result.FirstOrDefault();
+        }
+
+		public IQueryable<Incident> GetAll()
+		{
+		
+            var result = IncidentRepository.GetAll();
+            return result;
+		}
+
+        public Incident Save(Incident incident)
+        {
+			var updatedEntity = IncidentRepository.AddOrUpdate(incident);
+            return updatedEntity;
+        }
+
+		public void Delete(Incident incident)
+		{
+			var result = IncidentRepository.FindBy(i => i.Id == incident.Id);
+            var entityToDelete = result.FirstOrDefault();
+
+            if (entityToDelete != null)
+            {
+                IncidentRepository.Delete(entityToDelete);
+            }
+		}
+
+		public Incident FindBy(Expression<Func<Incident, bool>> predicate)
+        {
+            var result = IncidentRepository.FindBy(predicate);
+            return result.FirstOrDefault();
+        }
+
+        #endregion
+
+    }
+}
+
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+
+    public class OppertunityBusinessObject : IOppertunityBusinessObject
+    {
+        #region Dependencies
+
+        public IOppertunityRepository OppertunityRepository { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        public OppertunityBusinessObject(IOppertunityRepository oppertunityRepository)
+        {
+            OppertunityRepository = oppertunityRepository;
+        }
+
+        #endregion
+
+        #region Public Functions
+
+        public Oppertunity Get(int id)
+        {
+            var result = OppertunityRepository.FindBy(i => i.Id == id);
+            return result.FirstOrDefault();
+        }
+
+		public IQueryable<Oppertunity> GetAll()
+		{
+		
+            var result = OppertunityRepository.GetAll();
+            return result;
+		}
+
+        public Oppertunity Save(Oppertunity oppertunity)
+        {
+			var updatedEntity = OppertunityRepository.AddOrUpdate(oppertunity);
+            return updatedEntity;
+        }
+
+		public void Delete(Oppertunity oppertunity)
+		{
+			var result = OppertunityRepository.FindBy(i => i.Id == oppertunity.Id);
+            var entityToDelete = result.FirstOrDefault();
+
+            if (entityToDelete != null)
+            {
+                OppertunityRepository.Delete(entityToDelete);
+            }
+		}
+
+		public Oppertunity FindBy(Expression<Func<Oppertunity, bool>> predicate)
+        {
+            var result = OppertunityRepository.FindBy(predicate);
+            return result.FirstOrDefault();
+        }
+
+        #endregion
+
+    }
+}
+
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+
+    public class RoleBusinessObject : IRoleBusinessObject
+    {
+        #region Dependencies
+
+        public IRoleRepository RoleRepository { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        public RoleBusinessObject(IRoleRepository roleRepository)
+        {
+            RoleRepository = roleRepository;
+        }
+
+        #endregion
+
+        #region Public Functions
+
+        public Role Get(int id)
+        {
+            var result = RoleRepository.FindBy(i => i.Id == id);
+            return result.FirstOrDefault();
+        }
+
+		public IQueryable<Role> GetAll()
+		{
+		
+            var result = RoleRepository.GetAll();
+            return result;
+		}
+
+        public Role Save(Role role)
+        {
+			var updatedEntity = RoleRepository.AddOrUpdate(role);
+            return updatedEntity;
+        }
+
+		public void Delete(Role role)
+		{
+			var result = RoleRepository.FindBy(i => i.Id == role.Id);
+            var entityToDelete = result.FirstOrDefault();
+
+            if (entityToDelete != null)
+            {
+                RoleRepository.Delete(entityToDelete);
+            }
+		}
+
+		public Role FindBy(Expression<Func<Role, bool>> predicate)
+        {
+            var result = RoleRepository.FindBy(predicate);
+            return result.FirstOrDefault();
+        }
+
+        #endregion
+
+    }
+}
+
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+
+    public class StageBusinessObject : IStageBusinessObject
+    {
+        #region Dependencies
+
+        public IStageRepository StageRepository { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        public StageBusinessObject(IStageRepository stageRepository)
+        {
+            StageRepository = stageRepository;
+        }
+
+        #endregion
+
+        #region Public Functions
+
+        public Stage Get(int id)
+        {
+            var result = StageRepository.FindBy(i => i.Id == id);
+            return result.FirstOrDefault();
+        }
+
+		public IQueryable<Stage> GetAll()
+		{
+		
+            var result = StageRepository.GetAll();
+            return result;
+		}
+
+        public Stage Save(Stage stage)
+        {
+			var updatedEntity = StageRepository.AddOrUpdate(stage);
+            return updatedEntity;
+        }
+
+		public void Delete(Stage stage)
+		{
+			var result = StageRepository.FindBy(i => i.Id == stage.Id);
+            var entityToDelete = result.FirstOrDefault();
+
+            if (entityToDelete != null)
+            {
+                StageRepository.Delete(entityToDelete);
+            }
+		}
+
+		public Stage FindBy(Expression<Func<Stage, bool>> predicate)
+        {
+            var result = StageRepository.FindBy(predicate);
+            return result.FirstOrDefault();
+        }
+
+        #endregion
+
+    }
+}
+
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+
+    public class StateBusinessObject : IStateBusinessObject
+    {
+        #region Dependencies
+
+        public IStateRepository StateRepository { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        public StateBusinessObject(IStateRepository stateRepository)
+        {
+            StateRepository = stateRepository;
+        }
+
+        #endregion
+
+        #region Public Functions
+
+        public State Get(int id)
+        {
+            var result = StateRepository.FindBy(i => i.Id == id);
+            return result.FirstOrDefault();
+        }
+
+		public IQueryable<State> GetAll()
+		{
+		
+            var result = StateRepository.GetAll();
+            return result;
+		}
+
+        public State Save(State state)
+        {
+			var updatedEntity = StateRepository.AddOrUpdate(state);
+            return updatedEntity;
+        }
+
+		public void Delete(State state)
+		{
+			var result = StateRepository.FindBy(i => i.Id == state.Id);
+            var entityToDelete = result.FirstOrDefault();
+
+            if (entityToDelete != null)
+            {
+                StateRepository.Delete(entityToDelete);
+            }
+		}
+
+		public State FindBy(Expression<Func<State, bool>> predicate)
+        {
+            var result = StateRepository.FindBy(predicate);
+            return result.FirstOrDefault();
+        }
+
+        #endregion
+
+    }
+}
+
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+
+    public class SuburbBusinessObject : ISuburbBusinessObject
+    {
+        #region Dependencies
+
+        public ISuburbRepository SuburbRepository { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        public SuburbBusinessObject(ISuburbRepository suburbRepository)
+        {
+            SuburbRepository = suburbRepository;
+        }
+
+        #endregion
+
+        #region Public Functions
+
+        public Suburb Get(int id)
+        {
+            var result = SuburbRepository.FindBy(i => i.Id == id);
+            return result.FirstOrDefault();
+        }
+
+		public IQueryable<Suburb> GetAll()
+		{
+		
+            var result = SuburbRepository.GetAll();
+            return result;
+		}
+
+        public Suburb Save(Suburb suburb)
+        {
+			var updatedEntity = SuburbRepository.AddOrUpdate(suburb);
+            return updatedEntity;
+        }
+
+		public void Delete(Suburb suburb)
+		{
+			var result = SuburbRepository.FindBy(i => i.Id == suburb.Id);
+            var entityToDelete = result.FirstOrDefault();
+
+            if (entityToDelete != null)
+            {
+                SuburbRepository.Delete(entityToDelete);
+            }
+		}
+
+		public Suburb FindBy(Expression<Func<Suburb, bool>> predicate)
+        {
+            var result = SuburbRepository.FindBy(predicate);
+            return result.FirstOrDefault();
+        }
+
+        #endregion
+
+    }
+}
+
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+
+    public class TaskBusinessObject : ITaskBusinessObject
+    {
+        #region Dependencies
+
+        public ITaskRepository TaskRepository { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        public TaskBusinessObject(ITaskRepository taskRepository)
+        {
+            TaskRepository = taskRepository;
+        }
+
+        #endregion
+
+        #region Public Functions
+
+        public Task Get(int id)
+        {
+            var result = TaskRepository.FindBy(i => i.Id == id);
+            return result.FirstOrDefault();
+        }
+
+		public IQueryable<Task> GetAll()
+		{
+		
+            var result = TaskRepository.GetAll();
+            return result;
+		}
+
+        public Task Save(Task task)
+        {
+			var updatedEntity = TaskRepository.AddOrUpdate(task);
+            return updatedEntity;
+        }
+
+		public void Delete(Task task)
+		{
+			var result = TaskRepository.FindBy(i => i.Id == task.Id);
+            var entityToDelete = result.FirstOrDefault();
+
+            if (entityToDelete != null)
+            {
+                TaskRepository.Delete(entityToDelete);
+            }
+		}
+
+		public Task FindBy(Expression<Func<Task, bool>> predicate)
+        {
+            var result = TaskRepository.FindBy(predicate);
+            return result.FirstOrDefault();
+        }
+
+        #endregion
+
+    }
+}
+
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+
+    public class TodoBusinessObject : ITodoBusinessObject
+    {
+        #region Dependencies
+
+        public ITodoRepository TodoRepository { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        public TodoBusinessObject(ITodoRepository todoRepository)
+        {
+            TodoRepository = todoRepository;
+        }
+
+        #endregion
+
+        #region Public Functions
+
+        public Todo Get(int id)
+        {
+            var result = TodoRepository.FindBy(i => i.Id == id);
+            return result.FirstOrDefault();
+        }
+
+		public IQueryable<Todo> GetAll()
+		{
+		
+            var result = TodoRepository.GetAll();
+            return result;
+		}
+
+        public Todo Save(Todo todo)
+        {
+			var updatedEntity = TodoRepository.AddOrUpdate(todo);
+            return updatedEntity;
+        }
+
+		public void Delete(Todo todo)
+		{
+			var result = TodoRepository.FindBy(i => i.Id == todo.Id);
+            var entityToDelete = result.FirstOrDefault();
+
+            if (entityToDelete != null)
+            {
+                TodoRepository.Delete(entityToDelete);
+            }
+		}
+
+		public Todo FindBy(Expression<Func<Todo, bool>> predicate)
+        {
+            var result = TodoRepository.FindBy(predicate);
+            return result.FirstOrDefault();
+        }
+
+        #endregion
+
+    }
+}
+
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+
+    public class UserBusinessObject : IUserBusinessObject
+    {
+        #region Dependencies
+
+        public IUserRepository UserRepository { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        public UserBusinessObject(IUserRepository userRepository)
+        {
+            UserRepository = userRepository;
+        }
+
+        #endregion
+
+        #region Public Functions
+
+        public User Get(int id)
+        {
+            var result = UserRepository.FindBy(i => i.Id == id);
+            return result.FirstOrDefault();
+        }
+
+		public IQueryable<User> GetAll()
+		{
+		
+            var result = UserRepository.GetAll();
+            return result;
+		}
+
+        public User Save(User user)
+        {
+			var updatedEntity = UserRepository.AddOrUpdate(user);
+            return updatedEntity;
+        }
+
+		public void Delete(User user)
+		{
+			var result = UserRepository.FindBy(i => i.Id == user.Id);
+            var entityToDelete = result.FirstOrDefault();
+
+            if (entityToDelete != null)
+            {
+                UserRepository.Delete(entityToDelete);
+            }
+		}
+
+		public User FindBy(Expression<Func<User, bool>> predicate)
+        {
+            var result = UserRepository.FindBy(predicate);
+            return result.FirstOrDefault();
+        }
+
+        #endregion
+
+    }
+}
+
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+
+    public class WebPresenseBusinessObject : IWebPresenseBusinessObject
+    {
+        #region Dependencies
+
+        public IWebPresenseRepository WebPresenseRepository { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        public WebPresenseBusinessObject(IWebPresenseRepository webPresenseRepository)
+        {
+            WebPresenseRepository = webPresenseRepository;
+        }
+
+        #endregion
+
+        #region Public Functions
+
+        public WebPresense Get(int id)
+        {
+            var result = WebPresenseRepository.FindBy(i => i.Id == id);
+            return result.FirstOrDefault();
+        }
+
+		public IQueryable<WebPresense> GetAll()
+		{
+		
+            var result = WebPresenseRepository.GetAll();
+            return result;
+		}
+
+        public WebPresense Save(WebPresense webPresense)
+        {
+			var updatedEntity = WebPresenseRepository.AddOrUpdate(webPresense);
+            return updatedEntity;
+        }
+
+		public void Delete(WebPresense webPresense)
+		{
+			var result = WebPresenseRepository.FindBy(i => i.Id == webPresense.Id);
+            var entityToDelete = result.FirstOrDefault();
+
+            if (entityToDelete != null)
+            {
+                WebPresenseRepository.Delete(entityToDelete);
+            }
+		}
+
+		public WebPresense FindBy(Expression<Func<WebPresense, bool>> predicate)
+        {
+            var result = WebPresenseRepository.FindBy(predicate);
+            return result.FirstOrDefault();
+        }
+
+        #endregion
+
+    }
+}
+

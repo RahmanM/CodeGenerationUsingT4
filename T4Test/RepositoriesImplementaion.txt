@@ -1,0 +1,325 @@
+﻿ 
+ 
+
+////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+		using System.Data.Entity;
+using Core.GenericRepository;
+using CRM.Entities;
+
+namespace CRM.Repositories
+{
+    public class AccountRepository : GenericRepository<Account>, IAccountRepository
+    {
+        public AccountRepository(DbContext context) : base(context) {}
+    }
+}
+
+
+		using System.Data.Entity;
+using Core.GenericRepository;
+using CRM.Entities;
+
+namespace CRM.Repositories
+{
+    public class BallRepository : GenericRepository<Ball>, IBallRepository
+    {
+        public BallRepository(DbContext context) : base(context) {}
+    }
+}
+
+
+		using System.Data.Entity;
+using Core.GenericRepository;
+using CRM.Entities;
+
+namespace CRM.Repositories
+{
+    public class ActivityRepository : GenericRepository<Activity>, IActivityRepository
+    {
+        public ActivityRepository(DbContext context) : base(context) {}
+    }
+}
+
+
+		using System.Data.Entity;
+using Core.GenericRepository;
+using CRM.Entities;
+
+namespace CRM.Repositories
+{
+    public class ActivityTypeRepository : GenericRepository<ActivityType>, IActivityTypeRepository
+    {
+        public ActivityTypeRepository(DbContext context) : base(context) {}
+    }
+}
+
+
+		using System.Data.Entity;
+using Core.GenericRepository;
+using CRM.Entities;
+
+namespace CRM.Repositories
+{
+    public class AddressRepository : GenericRepository<Address>, IAddressRepository
+    {
+        public AddressRepository(DbContext context) : base(context) {}
+    }
+}
+
+
+		using System.Data.Entity;
+using Core.GenericRepository;
+using CRM.Entities;
+
+namespace CRM.Repositories
+{
+    public class AddressTypeRepository : GenericRepository<AddressType>, IAddressTypeRepository
+    {
+        public AddressTypeRepository(DbContext context) : base(context) {}
+    }
+}
+
+
+		using System.Data.Entity;
+using Core.GenericRepository;
+using CRM.Entities;
+
+namespace CRM.Repositories
+{
+    public class CampaignRepository : GenericRepository<Campaign>, ICampaignRepository
+    {
+        public CampaignRepository(DbContext context) : base(context) {}
+    }
+}
+
+
+		using System.Data.Entity;
+using Core.GenericRepository;
+using CRM.Entities;
+
+namespace CRM.Repositories
+{
+    public class CaseRepository : GenericRepository<Case>, ICaseRepository
+    {
+        public CaseRepository(DbContext context) : base(context) {}
+    }
+}
+
+
+		using System.Data.Entity;
+using Core.GenericRepository;
+using CRM.Entities;
+
+namespace CRM.Repositories
+{
+    public class ContactRepository : GenericRepository<Contact>, IContactRepository
+    {
+        public ContactRepository(DbContext context) : base(context) {}
+    }
+}
+
+
+		using System.Data.Entity;
+using Core.GenericRepository;
+using CRM.Entities;
+
+namespace CRM.Repositories
+{
+    public class CountryRepository : GenericRepository<Country>, ICountryRepository
+    {
+        public CountryRepository(DbContext context) : base(context) {}
+    }
+}
+
+
+		using System.Data.Entity;
+using Core.GenericRepository;
+using CRM.Entities;
+
+namespace CRM.Repositories
+{
+    public class EmailRepository : GenericRepository<Email>, IEmailRepository
+    {
+        public EmailRepository(DbContext context) : base(context) {}
+    }
+}
+
+
+		using System.Data.Entity;
+using Core.GenericRepository;
+using CRM.Entities;
+
+namespace CRM.Repositories
+{
+    public class EngagementRepository : GenericRepository<Engagement>, IEngagementRepository
+    {
+        public EngagementRepository(DbContext context) : base(context) {}
+    }
+}
+
+
+		using System.Data.Entity;
+using Core.GenericRepository;
+using CRM.Entities;
+
+namespace CRM.Repositories
+{
+    public class EngagementTypeRepository : GenericRepository<EngagementType>, IEngagementTypeRepository
+    {
+        public EngagementTypeRepository(DbContext context) : base(context) {}
+    }
+}
+
+
+		using System.Data.Entity;
+using Core.GenericRepository;
+using CRM.Entities;
+
+namespace CRM.Repositories
+{
+    public class EnquiryRepository : GenericRepository<Enquiry>, IEnquiryRepository
+    {
+        public EnquiryRepository(DbContext context) : base(context) {}
+    }
+}
+
+
+		using System.Data.Entity;
+using Core.GenericRepository;
+using CRM.Entities;
+
+namespace CRM.Repositories
+{
+    public class IncidentRepository : GenericRepository<Incident>, IIncidentRepository
+    {
+        public IncidentRepository(DbContext context) : base(context) {}
+    }
+}
+
+
+		using System.Data.Entity;
+using Core.GenericRepository;
+using CRM.Entities;
+
+namespace CRM.Repositories
+{
+    public class OppertunityRepository : GenericRepository<Oppertunity>, IOppertunityRepository
+    {
+        public OppertunityRepository(DbContext context) : base(context) {}
+    }
+}
+
+
+		using System.Data.Entity;
+using Core.GenericRepository;
+using CRM.Entities;
+
+namespace CRM.Repositories
+{
+    public class RoleRepository : GenericRepository<Role>, IRoleRepository
+    {
+        public RoleRepository(DbContext context) : base(context) {}
+    }
+}
+
+
+		using System.Data.Entity;
+using Core.GenericRepository;
+using CRM.Entities;
+
+namespace CRM.Repositories
+{
+    public class StageRepository : GenericRepository<Stage>, IStageRepository
+    {
+        public StageRepository(DbContext context) : base(context) {}
+    }
+}
+
+
+		using System.Data.Entity;
+using Core.GenericRepository;
+using CRM.Entities;
+
+namespace CRM.Repositories
+{
+    public class StateRepository : GenericRepository<State>, IStateRepository
+    {
+        public StateRepository(DbContext context) : base(context) {}
+    }
+}
+
+
+		using System.Data.Entity;
+using Core.GenericRepository;
+using CRM.Entities;
+
+namespace CRM.Repositories
+{
+    public class SuburbRepository : GenericRepository<Suburb>, ISuburbRepository
+    {
+        public SuburbRepository(DbContext context) : base(context) {}
+    }
+}
+
+
+		using System.Data.Entity;
+using Core.GenericRepository;
+using CRM.Entities;
+
+namespace CRM.Repositories
+{
+    public class TaskRepository : GenericRepository<Task>, ITaskRepository
+    {
+        public TaskRepository(DbContext context) : base(context) {}
+    }
+}
+
+
+		using System.Data.Entity;
+using Core.GenericRepository;
+using CRM.Entities;
+
+namespace CRM.Repositories
+{
+    public class TodoRepository : GenericRepository<Todo>, ITodoRepository
+    {
+        public TodoRepository(DbContext context) : base(context) {}
+    }
+}
+
+
+		using System.Data.Entity;
+using Core.GenericRepository;
+using CRM.Entities;
+
+namespace CRM.Repositories
+{
+    public class UserRepository : GenericRepository<User>, IUserRepository
+    {
+        public UserRepository(DbContext context) : base(context) {}
+    }
+}
+
+
+		using System.Data.Entity;
+using Core.GenericRepository;
+using CRM.Entities;
+
+namespace CRM.Repositories
+{
+    public class WebPresenseRepository : GenericRepository<WebPresense>, IWebPresenseRepository
+    {
+        public WebPresenseRepository(DbContext context) : base(context) {}
+    }
+}
+
+

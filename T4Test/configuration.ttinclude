@@ -1,0 +1,108 @@
+﻿<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Text" #>
+
+////////////////////////////////////////////////////////////////////////////
+<#@ assembly name="D:\rahman\T4Test\T4.Core\bin\Debug\T4.Core.dll" #>
+////////////////////////////////////////////////////////////////////////////
+
+<#+
+public static partial class Configurations
+{
+	// OPTIONAL BASE TYPE FILTER - LEAVE BLANK IF NOT USED
+	public const string BaseEntityClass = @"EntityBase"; // optional base entity to filter only entities that inherit from specific base class, i.e. "BaseEntity"
+	public const string BaseEntityClassDll = @"D:\rahman\T4Test\T4.Core\bin\Debug\T4.Core.dll"; // optional base entity dll to filter only entities that inherit from specific base class, i.e. "SSW.Data.Entities.dll"
+	///////////////////////////////////////////
+	
+	// ENTTITIES NAME CONFIGURATION I.E FULL NAME OF THE DLL INCLUDING THE PATH
+	public const string DomainModelProjectDll = @"D:\rahman\T4Test\T4.Entities\bin\Debug\T4.Entities.dll"; // dll file name for domain models
+	
+	// NAME SAPCES CONIGURATIONS
+	public const string DomainModelProjectNamespace = @"CRM.Entities"; // custom domain model namespace, usualy the same as dll name. Accepts comma-separated list
+	public const string RepositoryInterfacesProjectNamespace = @"CRM.Repositories"; // namespace to be used by generated repository interfaces
+	public static string BusinessProjectNamespace = "CRM.Business";
+    public static string InfrasructureProjectNamespace = "Core.Infrastructure";
+    public static string DBContextName = "CRMContext";
+    public static string BusinessObjectSuffix = "BusinessObject";
+    public static string RepositorySuffix = "Repository";
+
+	/////////////////////////////////////////////////////////////////////
+
+	// Template file names
+	public static string BusinessObjectTemplateFile = @"D:\rahman\T4Test\T4Test\TemplateFiles\BusinessObject.template";
+	public static string BusinessObjectInterfaceTemplateFile = @"D:\rahman\T4Test\T4Test\TemplateFiles\BusinessObjectInterface.template";
+	public static string RepositoriesInterfaceTemplateFile = @"D:\rahman\T4Test\T4Test\TemplateFiles\RepositoriesInterface.template";
+	public static string RepositoriesImplTemplateFile = @"D:\rahman\T4Test\T4Test\TemplateFiles\RepositoriesImpl.template";
+	public static string OutputFolderName = @"D:\rahman\T4Test\T4Test\Output";
+
+	///////////////////////////////////////////////////////////////////////////
+	// Namespace imports for each components
+	///////////////////////////////////////////////////////////////////////////
+	public static List<string> BusinessObjectImports()
+    {
+        var list = new List<string>();
+        list.Add("using System;");
+        list.Add("using System.Linq;");
+        list.Add("using System.Linq.Expressions;");
+        list.Add("using " + DomainModelProjectNamespace + ";");
+        list.Add("using " + RepositoryInterfacesProjectNamespace + ";");
+        list.Add("using " + InfrasructureProjectNamespace + ";");
+        return list;
+    }
+
+    public static List<string> RepositoryInterfacesImports()
+    {
+        var list = new List<string>();
+        list.Add("using System.Collections.Generic;");
+        list.Add("using " + DomainModelProjectNamespace + ";");
+        list.Add("using " + RepositoryInterfacesProjectNamespace + ";");
+        list.Add("using " + InfrasructureProjectNamespace + ";");
+        return list;
+    }
+
+    public static List<string> DBContextImports()
+    {
+        var list = new List<string>();
+        list.Add("using " + DomainModelProjectNamespace + ";");
+        list.Add("using " + InfrasructureProjectNamespace + ";");
+        list.Add("using System.Data.Entity;");
+        return list;
+    }
+	
+	public static List<string> RepositoryImplImports()
+    {
+        var list = new List<string>();
+        list.Add("using System.Data.Entity;");
+        list.Add("using Core.GenericRepository;");
+        list.Add("using " + DomainModelProjectNamespace + ";");
+        return list;
+    }
+		
+	/////////////////////////////////////////////////////////////////////
+	// Use this only if you want to apply custom domain class filtering. 
+	// Most of the time you will not need to change this
+	/////////////////////////////////////////////////////////////////////
+	public static Func<Type, bool> DomainTypeFilter 
+	{ 
+		get 
+		{ 
+			Func<Type, bool> func = 
+				(t) => 
+					!t.IsAbstract && !t.IsSealed; // <--- change this line to specify your own custom Domain Class filters, i.e. you may want to exclude all classes that start with "ABC"
+			return func;
+		} 
+	}
+
+    public static string GetConcatinatedString(List<string> list)
+    {
+        StringBuilder sb = new StringBuilder();
+
+        foreach(string s in list) {
+            sb.AppendLine(s);
+        }
+
+        return sb.ToString().TrimStart().TrimEnd();
+    }
+
+
+}
+#>

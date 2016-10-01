@@ -1,0 +1,325 @@
+﻿ 
+ 
+
+////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+	public interface IAccountBusinessObject : IBusinessObject<Account>
+    {
+    }
+}
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+	public interface IBallBusinessObject : IBusinessObject<Ball>
+    {
+    }
+}
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+	public interface IActivityBusinessObject : IBusinessObject<Activity>
+    {
+    }
+}
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+	public interface IActivityTypeBusinessObject : IBusinessObject<ActivityType>
+    {
+    }
+}
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+	public interface IAddressBusinessObject : IBusinessObject<Address>
+    {
+    }
+}
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+	public interface IAddressTypeBusinessObject : IBusinessObject<AddressType>
+    {
+    }
+}
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+	public interface ICampaignBusinessObject : IBusinessObject<Campaign>
+    {
+    }
+}
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+	public interface ICaseBusinessObject : IBusinessObject<Case>
+    {
+    }
+}
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+	public interface IContactBusinessObject : IBusinessObject<Contact>
+    {
+    }
+}
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+	public interface ICountryBusinessObject : IBusinessObject<Country>
+    {
+    }
+}
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+	public interface IEmailBusinessObject : IBusinessObject<Email>
+    {
+    }
+}
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+	public interface IEngagementBusinessObject : IBusinessObject<Engagement>
+    {
+    }
+}
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+	public interface IEngagementTypeBusinessObject : IBusinessObject<EngagementType>
+    {
+    }
+}
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+	public interface IEnquiryBusinessObject : IBusinessObject<Enquiry>
+    {
+    }
+}
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+	public interface IIncidentBusinessObject : IBusinessObject<Incident>
+    {
+    }
+}
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+	public interface IOppertunityBusinessObject : IBusinessObject<Oppertunity>
+    {
+    }
+}
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+	public interface IRoleBusinessObject : IBusinessObject<Role>
+    {
+    }
+}
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+	public interface IStageBusinessObject : IBusinessObject<Stage>
+    {
+    }
+}
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+	public interface IStateBusinessObject : IBusinessObject<State>
+    {
+    }
+}
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+	public interface ISuburbBusinessObject : IBusinessObject<Suburb>
+    {
+    }
+}
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+	public interface ITaskBusinessObject : IBusinessObject<Task>
+    {
+    }
+}
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+	public interface ITodoBusinessObject : IBusinessObject<Todo>
+    {
+    }
+}
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+	public interface IUserBusinessObject : IBusinessObject<User>
+    {
+    }
+}
+		using System;
+using System.Linq;
+using System.Linq.Expressions;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Business
+{
+	public interface IWebPresenseBusinessObject : IBusinessObject<WebPresense>
+    {
+    }
+}

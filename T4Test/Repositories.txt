@@ -1,0 +1,301 @@
+﻿ 
+ 
+
+////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+		using System.Collections.Generic;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Repositories
+{
+	public interface IAccountRepository : IGenericRepository<Account>
+    {
+
+    }
+}
+		using System.Collections.Generic;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Repositories
+{
+	public interface IBallRepository : IGenericRepository<Ball>
+    {
+
+    }
+}
+		using System.Collections.Generic;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Repositories
+{
+	public interface IActivityRepository : IGenericRepository<Activity>
+    {
+
+    }
+}
+		using System.Collections.Generic;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Repositories
+{
+	public interface IActivityTypeRepository : IGenericRepository<ActivityType>
+    {
+
+    }
+}
+		using System.Collections.Generic;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Repositories
+{
+	public interface IAddressRepository : IGenericRepository<Address>
+    {
+
+    }
+}
+		using System.Collections.Generic;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Repositories
+{
+	public interface IAddressTypeRepository : IGenericRepository<AddressType>
+    {
+
+    }
+}
+		using System.Collections.Generic;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Repositories
+{
+	public interface ICampaignRepository : IGenericRepository<Campaign>
+    {
+
+    }
+}
+		using System.Collections.Generic;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Repositories
+{
+	public interface ICaseRepository : IGenericRepository<Case>
+    {
+
+    }
+}
+		using System.Collections.Generic;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Repositories
+{
+	public interface IContactRepository : IGenericRepository<Contact>
+    {
+
+    }
+}
+		using System.Collections.Generic;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Repositories
+{
+	public interface ICountryRepository : IGenericRepository<Country>
+    {
+
+    }
+}
+		using System.Collections.Generic;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Repositories
+{
+	public interface IEmailRepository : IGenericRepository<Email>
+    {
+
+    }
+}
+		using System.Collections.Generic;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Repositories
+{
+	public interface IEngagementRepository : IGenericRepository<Engagement>
+    {
+
+    }
+}
+		using System.Collections.Generic;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Repositories
+{
+	public interface IEngagementTypeRepository : IGenericRepository<EngagementType>
+    {
+
+    }
+}
+		using System.Collections.Generic;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Repositories
+{
+	public interface IEnquiryRepository : IGenericRepository<Enquiry>
+    {
+
+    }
+}
+		using System.Collections.Generic;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Repositories
+{
+	public interface IIncidentRepository : IGenericRepository<Incident>
+    {
+
+    }
+}
+		using System.Collections.Generic;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Repositories
+{
+	public interface IOppertunityRepository : IGenericRepository<Oppertunity>
+    {
+
+    }
+}
+		using System.Collections.Generic;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Repositories
+{
+	public interface IRoleRepository : IGenericRepository<Role>
+    {
+
+    }
+}
+		using System.Collections.Generic;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Repositories
+{
+	public interface IStageRepository : IGenericRepository<Stage>
+    {
+
+    }
+}
+		using System.Collections.Generic;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Repositories
+{
+	public interface IStateRepository : IGenericRepository<State>
+    {
+
+    }
+}
+		using System.Collections.Generic;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Repositories
+{
+	public interface ISuburbRepository : IGenericRepository<Suburb>
+    {
+
+    }
+}
+		using System.Collections.Generic;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Repositories
+{
+	public interface ITaskRepository : IGenericRepository<Task>
+    {
+
+    }
+}
+		using System.Collections.Generic;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Repositories
+{
+	public interface ITodoRepository : IGenericRepository<Todo>
+    {
+
+    }
+}
+		using System.Collections.Generic;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Repositories
+{
+	public interface IUserRepository : IGenericRepository<User>
+    {
+
+    }
+}
+		using System.Collections.Generic;
+using CRM.Entities;
+using CRM.Repositories;
+using Core.Infrastructure;
+
+namespace CRM.Repositories
+{
+	public interface IWebPresenseRepository : IGenericRepository<WebPresense>
+    {
+
+    }
+}

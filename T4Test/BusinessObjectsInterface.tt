@@ -1,0 +1,39 @@
+﻿<#@ template debug="true" hostSpecific="true" #>
+<#@ output extension=".txt" #>
+<#@ Assembly Name="System.Core" #>
+<#@ Assembly Name="System.Windows.Forms" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Reflection" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Diagnostics" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Linq.Expressions" #>
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.Collections.Generic" #> 
+<#@ include file="helper.ttinclude" #>
+
+
+<# 
+	var entityTypes = AssemblyHelper.GetDomainTypes();
+	var imports = Configurations.GetConcatinatedString(Configurations.BusinessObjectImports());
+	var namespaces = Configurations.BusinessProjectNamespace;
+	string contentUpdated = string.Empty;
+
+    var templateContent = GenerationUtil.ReadFileAndReturnContent(Configurations.BusinessObjectInterfaceTemplateFile);
+
+    foreach (var type in entityTypes)
+    {
+		var updatedContent = templateContent;
+        string entityName = type.Name;
+
+		updatedContent = GenerationUtil.UpdatePlaceholders(updatedContent, entityName, namespaces, imports, string.Empty);
+
+	    GenerationUtil.WriteToFile(Configurations.OutputFolderName, 
+									"I"+entityName, 
+									updatedContent);
+#>
+		<#= updatedContent #>
+<#
+    }
+#>

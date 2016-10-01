@@ -1,0 +1,16 @@
+D:\rahman\T4Test\T4Test\bin\Debug\T4Test.exe.config
+D:\rahman\T4Test\T4Test\obj\Debug\T4Test.csprojResolveAssemblyReference.cache
+D:\rahman\T4Test\T4Test\bin\Debug\T4Test.exe
+D:\rahman\T4Test\T4Test\bin\Debug\T4Test.pdb
+D:\rahman\T4Test\T4Test\bin\Debug\T4.Entities.dll
+D:\rahman\T4Test\T4Test\bin\Debug\T4.Core.dll
+D:\rahman\T4Test\T4Test\bin\Debug\T4.Entities.pdb
+D:\rahman\T4Test\T4Test\bin\Debug\T4.Core.pdb
+D:\rahman\T4Test\T4Test\obj\Debug\T4Test.exe
+D:\rahman\T4Test\T4Test\obj\Debug\T4Test.pdb
+D:\rahman\T4Test\T4Test\bin\Debug\Microsoft.SqlServer.Smo.dll
+D:\rahman\T4Test\T4Test\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+D:\rahman\T4Test\T4Test\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll
+D:\rahman\T4Test\T4Test\bin\Debug\Microsoft.SqlServer.SqlEnum.dll
+D:\rahman\T4Test\T4Test\bin\Debug\Microsoft.SqlServer.Dmf.dll
+D:\rahman\T4Test\T4Test\bin\Debug\Microsoft.SqlServer.ServiceBrokerEnum.dll

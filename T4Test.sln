@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T4Test", "T4Test\T4Test.csproj", "{19AC22BC-97C1-49B3-9DD9-E581D097FD7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T4.Entities", "T4.Entities\T4.Entities.csproj", "{130AA3E2-761F-4509-967B-54F16F796178}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T4.Core", "T4.Core\T4.Core.csproj", "{0C7659C0-44E3-44C3-BC0C-B66F0A100C7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19AC22BC-97C1-49B3-9DD9-E581D097FD7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19AC22BC-97C1-49B3-9DD9-E581D097FD7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19AC22BC-97C1-49B3-9DD9-E581D097FD7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19AC22BC-97C1-49B3-9DD9-E581D097FD7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{130AA3E2-761F-4509-967B-54F16F796178}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{130AA3E2-761F-4509-967B-54F16F796178}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{130AA3E2-761F-4509-967B-54F16F796178}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{130AA3E2-761F-4509-967B-54F16F796178}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C7659C0-44E3-44C3-BC0C-B66F0A100C7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C7659C0-44E3-44C3-BC0C-B66F0A100C7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C7659C0-44E3-44C3-BC0C-B66F0A100C7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C7659C0-44E3-44C3-BC0C-B66F0A100C7D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://rahmanmahmoodi.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = T4.Core\\T4.Core.csproj
+		SccProjectName1 = T4.Core
+		SccLocalPath1 = T4.Core
+		SccProjectUniqueName2 = T4.Entities\\T4.Entities.csproj
+		SccProjectName2 = T4.Entities
+		SccLocalPath2 = T4.Entities
+		SccProjectUniqueName3 = T4Test\\T4Test.csproj
+		SccProjectName3 = T4Test
+		SccLocalPath3 = T4Test
+	EndGlobalSection
+EndGlobal
