@@ -79,7 +79,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -90,7 +89,6 @@
     <None Include="TemplateFiles\RepositoriesImpl.template" />
     <None Include="TemplateFiles\RepositoriesInterface.template" />
     <None Include="TemplateFiles\BusinessObjectInterface.template" />
-    <None Include="V1\ConfigurationsV1.ttinclude" />
   </ItemGroup>
   <ItemGroup>
     <None Include="helper.ttinclude">
@@ -152,10 +150,6 @@
       <LastGenOutput>Repositories.txt</LastGenOutput>
     </Content>
     <None Include="TemplateFiles\BusinessObject.template" />
-    <Content Include="V1\InterfacesV1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>InterfacesV1.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

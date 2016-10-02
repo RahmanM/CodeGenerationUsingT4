@@ -24,16 +24,36 @@ namespace <#=Configurations.RepositoryInterfacesProjectNamespace#>
             Database.SetInitializer<<#= Configurations.DBContextName #>>(new DropCreateDatabaseIfModelChanges<<#= Configurations.DBContextName #>>());
         }
 
-<# 
-	var entityTypes = AssemblyHelper.GetDomainTypes();
+	<# 
+		var entityTypes = AssemblyHelper.GetDomainTypes();
 
-    foreach (var type in entityTypes)
-    {
-#>
-        public virtual DbSet<<#= type.Name #>> <#= type.Name #>s { get; set; }
+		foreach (var type in entityTypes)
+		{
+	#>
+			public virtual DbSet<<#= type.Name #>> <#= type.Name #>s { get; set; }
+	<#
+		}
+	#>
+
+	}
+ }
+
 <#
-    }
+		SaveOutput(Configurations.DBContextName + ".cs", Configurations.OutputFolderName);
 #>
 
-    }
 
+<#+
+	 void SaveOutput(string outputFileName, string destinationFolder)
+    {
+        // Write to destination folder
+        string templateDirectory = Path.Combine(Path.GetDirectoryName(Host.TemplateFile), destinationFolder);
+        string outputFilePath = Path.Combine(templateDirectory, outputFileName);
+        File.Delete(outputFilePath);
+        File.WriteAllText(outputFilePath, this.GenerationEnvironment.ToString()); 
+ 
+        // Flush generation
+        this.GenerationEnvironment.Remove(0, this.GenerationEnvironment.Length);
+    }
+	
+ #>

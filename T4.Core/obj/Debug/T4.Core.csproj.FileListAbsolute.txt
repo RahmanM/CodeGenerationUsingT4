@@ -2,3 +2,4 @@ D:\rahman\T4Test\T4.Core\bin\Debug\T4.Core.dll
 D:\rahman\T4Test\T4.Core\bin\Debug\T4.Core.pdb
 D:\rahman\T4Test\T4.Core\obj\Debug\T4.Core.dll
 D:\rahman\T4Test\T4.Core\obj\Debug\T4.Core.pdb
+D:\rahman\T4Test\T4.Core\obj\Debug\T4.Core.csprojResolveAssemblyReference.cache
